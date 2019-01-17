@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--注册应用，api-provider 是应用的唯一标识符-->
+    <dubbo:application name="dubbo-consumer" owner="programmer" organization="dubbox"/>
+
+    <!--注册zookeeper-->
+    <dubbo:registry address="zookeeper://localhost:2181"/>
+
+    <dubbo:reference id="apiService" interface="com.ninuxGithub.service.ApiService"/>
+
+</beans>
